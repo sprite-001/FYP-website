@@ -1,8 +1,10 @@
-# FYP-website
-
 ## Website Deployment
 
 This website is hosted on Vercel and connected to the GitHub repository.
+
+### Website URL
+
+https://handmouse.vercel.app/
 
 ### Updating the Website
 
@@ -20,3 +22,4 @@ git push
 ```
 
 Once the changes are pushed to the main branch, Vercel will automatically detect the update, rebuild the project, and deploy the latest version of the website. No manual deployment is required.
+
