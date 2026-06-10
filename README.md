@@ -4,7 +4,7 @@ This website is hosted on Vercel and connected to the GitHub repository.
 
 ### Website URL
 
-https://handmouse.vercel.app/
+https://handmouse.vercel.app
 
 ### Updating the Website
 
