@@ -28,7 +28,6 @@
     --font-body: "IBM Plex Sans", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
   }
-
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
@@ -40,7 +39,6 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-
   body::before {
     content: "";
     position: fixed; inset: 0;
@@ -60,10 +58,8 @@
     pointer-events: none;
     z-index: 0;
   }
-
   a { color: inherit; text-decoration: none; }
   button { font: inherit; cursor: pointer; }
-
   .wrap {
     max-width: 1280px;
     margin: 0 auto;
@@ -71,7 +67,6 @@
     position: relative;
     z-index: 1;
   }
-
   .nav {
     position: sticky; top: 0; z-index: 100;
     backdrop-filter: blur(14px);
@@ -103,7 +98,6 @@
   .brand-id { color: var(--text); font-weight: 500; }
   .brand-sep { color: var(--text-faint); }
   .brand-uni { color: var(--text-dim); }
-
   .nav-links {
     display: flex; align-items: center; gap: 28px;
     font-size: 13px; color: var(--text-dim);
@@ -126,7 +120,6 @@
     animation: pulse 1.6s ease-in-out infinite;
   }
   @keyframes pulse { 50% { opacity: 0.4; } }
-
   .hero {
     position: relative;
     padding: 16px 0 60px;
@@ -202,7 +195,6 @@
   .btn-ghost:hover { border-color: var(--text-dim); background: rgba(255,255,255,0.04); }
   .btn .arrow { transition: transform .2s; }
   .btn:hover .arrow { transform: translateX(3px); }
-
   .hero-meta {
     margin-top: 56px;
     display: grid;
@@ -221,7 +213,6 @@
     font-family: var(--font-display);
     font-size: 22px; color: var(--text); font-weight: 500;
   }
-
   .hand-stage {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -241,7 +232,6 @@
     background-size: 32px 32px;
   }
   .hand-stage svg { width: 100%; height: 100%; display: block; position: relative; z-index: 2; }
-
   .corner {
     position: absolute; width: 24px; height: 24px;
     border: 1.5px solid var(--accent);
@@ -251,7 +241,6 @@
   .corner.tr { top: 16px; right: 16px; border-left: none; border-bottom: none; }
   .corner.bl { bottom: 16px; left: 16px; border-right: none; border-top: none; }
   .corner.br { bottom: 16px; right: 16px; border-left: none; border-top: none; }
-
   .hud {
     position: absolute; z-index: 4;
     font-family: var(--font-mono); font-size: 10px;
@@ -264,7 +253,6 @@
   .hud.br { bottom: 28px; right: 50px; text-align: right; }
   .hud .v { color: var(--accent); }
   .hud .lbl { color: var(--text-faint); display: block; font-size: 9px; margin-bottom: 2px; }
-
   .gesture-badge {
     position: absolute; z-index: 5;
     left: 50%; bottom: 56px; transform: translateX(-50%);
@@ -290,12 +278,10 @@
     border: 1px solid var(--line);
     color: var(--text);
   }
-
   .hand-bone { stroke: var(--accent); stroke-width: 2; fill: none; stroke-linecap: round; opacity: 0.85; }
   .hand-joint { fill: var(--accent); }
   .hand-joint.tip { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
   .hand-wrist { fill: var(--accent); }
-
   .scan {
     position: absolute; left: 0; right: 0;
     height: 1px;
@@ -310,7 +296,6 @@
     90% { opacity: 0.5; }
     100% { top: 100%; opacity: 0; }
   }
-
   .marquee {
     margin-top: 80px;
     padding: 22px 0;
@@ -347,7 +332,6 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-
   section { position: relative; z-index: 1; padding: 120px 0; }
   .section-head {
     display: flex; justify-content: space-between; align-items: flex-end;
@@ -374,7 +358,6 @@
     color: var(--text-dim); font-size: 15px; line-height: 1.6;
     flex-shrink: 0;
   }
-
   .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -408,7 +391,6 @@
   .about-stat .l {
     font-size: 13px; color: var(--text-dim); line-height: 1.4;
   }
-
   .features {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -446,11 +428,9 @@
     display: flex; align-items: center; justify-content: flex-start;
     position: relative;
   }
-
   .feat.wide { grid-column: span 3; }
   .feat.tall { grid-row: span 2; }
   .feat.full { grid-column: span 6; }
-
   .vis-dots { display: flex; gap: 6px; align-items: center; }
   .vis-dots span {
     width: 10px; height: 10px; border-radius: 50%;
@@ -462,14 +442,12 @@
   .vis-dots span:nth-child(4) { animation-delay: 0.54s; }
   .vis-dots span:nth-child(5) { animation-delay: 0.72s; }
   @keyframes dotpulse { 50% { opacity: 1; transform: scale(1.3); } }
-
   .vis-bars { display: flex; gap: 4px; align-items: flex-end; height: 100%; }
   .vis-bars span {
     width: 6px; background: var(--accent); border-radius: 1px;
     animation: bar 1.6s ease-in-out infinite;
   }
   @keyframes bar { 0%, 100% { height: 20%; } 50% { height: 90%; } }
-
   .vis-cursor { position: relative; width: 100%; height: 100%; }
   .vis-cursor .crosshair {
     position: absolute; left: 30%; top: 30%;
@@ -487,7 +465,6 @@
     50% { transform: translate(140px, -10px); }
     75% { transform: translate(60px, 20px); }
   }
-
   .vis-alert {
     display: flex; gap: 8px; align-items: center;
     font-family: var(--font-mono); font-size: 11px;
@@ -499,7 +476,6 @@
     display: grid; place-items: center;
     font-size: 11px; font-weight: 600;
   }
-
   .vis-game {
     display: flex; gap: 10px; flex-wrap: wrap;
   }
@@ -513,7 +489,6 @@
     border-color: var(--accent); color: var(--accent);
     background: rgba(125,255,176,0.05);
   }
-
   .vis-multi { display: flex; gap: 12px; }
   .vis-multi .h {
     width: 36px; height: 50px;
@@ -526,7 +501,6 @@
     background: repeating-linear-gradient(90deg, var(--accent) 0 2px, transparent 2px 6px);
     opacity: 0.5;
   }
-
   .feat-webcam {
     background:
       radial-gradient(circle at 80% 50%, rgba(125,255,176,0.08), transparent 60%),
@@ -547,7 +521,6 @@
   .feat-webcam .strike-list span {
     text-decoration: line-through; text-decoration-color: var(--magenta);
   }
-
   .pipeline {
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -595,7 +568,6 @@
     border: 1px solid rgba(125,255,176,0.3); border-radius: 4px;
     background: rgba(125,255,176,0.04);
   }
-
   .pipe-arrows {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -615,7 +587,6 @@
   }
   .pipe-arrows .pa.first { margin-left: 0; }
   .pipe-arrows .pa.last::after { display: none; }
-
   .code {
     margin-top: 48px;
     border: 1px solid var(--line);
@@ -648,7 +619,210 @@
   .code .com { color: var(--text-faint); font-style: italic; }
   .code .num { color: var(--amber); }
   .code .var { color: var(--text); }
-
+  /* ---------- Pricing ---------- */
+  .plan-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    padding: 5px 12px;
+    border: 1px solid rgba(125,255,176,0.3);
+    border-radius: 999px;
+    background: rgba(125,255,176,0.06);
+    width: fit-content;
+  }
+  .plan-badge::before {
+    content: ""; width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+  }
+  .pricing-free {
+    border: 1px solid var(--accent);
+    border-radius: 16px;
+    padding: 40px;
+    background:
+      radial-gradient(ellipse 60% 80% at 100% 0%, rgba(125,255,176,0.06), transparent 60%),
+      var(--surface);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .free-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 32px; flex-wrap: wrap;
+    margin: 18px 0 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .free-name {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 26px; letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .free-price {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 36px; color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .free-price span {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--text-faint); font-weight: 400;
+    letter-spacing: 0; margin-left: 4px;
+  }
+  .free-token { text-align: right; }
+  .free-token .k {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--text-faint); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .free-token .v {
+    font-family: var(--font-mono); font-size: 14px; color: var(--text);
+  }
+  .free-features {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+  }
+  .free-features li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 14px; color: var(--text-dim); line-height: 1.5;
+  }
+  .free-features li::before {
+    content: "✓"; position: absolute; left: 0; top: 0;
+    color: var(--accent); font-size: 13px; font-family: var(--font-mono);
+  }
+  .free-footnote {
+    margin-top: 28px;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-faint);
+  }
+  .pricing-sub-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 24px; flex-wrap: wrap;
+    margin: 56px 0 24px;
+  }
+  .pricing-sub-label {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 20px; letter-spacing: -0.01em;
+  }
+  .pricing-sub-head p {
+    margin: 0; font-size: 14px; color: var(--text-dim); max-width: 380px;
+  }
+  .token-grid, .sub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .token-card, .sub-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px 26px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .25s, background .25s, transform .25s, box-shadow .25s;
+    display: flex; flex-direction: column;
+  }
+  .token-card:hover, .sub-card:hover {
+    border-color: var(--line-strong); background: var(--surface-2);
+    transform: translateY(-3px);
+  }
+  .token-card .plan-badge, .sub-card .plan-badge {
+    position: absolute; top: 22px; right: 22px;
+  }
+  .token-num {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 44px; color: var(--text); letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .token-label {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-faint); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-top: 8px;
+  }
+  .token-price {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 22px; color: var(--accent);
+    margin-top: 22px; padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .token-price span {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-faint); font-weight: 400;
+    margin-left: 6px;
+  }
+  .token-minutes {
+    margin-top: 10px;
+    font-size: 13px; color: var(--text-dim);
+  }
+  .token-card.popular {
+    border-color: rgba(125,255,176,0.35);
+    box-shadow: 0 0 32px rgba(125,255,176,0.08);
+  }
+  .token-card.popular:hover { box-shadow: 0 0 44px rgba(125,255,176,0.14); }
+  .token-card.value {
+    border-color: var(--accent);
+    box-shadow: 0 0 48px var(--accent-glow);
+  }
+  .token-card.value:hover { box-shadow: 0 0 64px rgba(125,255,176,0.24); }
+  .sub-card .sub-name {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 20px; letter-spacing: -0.01em;
+    margin-top: 6px;
+  }
+  .sub-card .sub-price {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 32px; color: var(--text);
+    margin: 14px 0 22px;
+    letter-spacing: -0.02em;
+  }
+  .sub-card .sub-price span {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--text-faint); font-weight: 400;
+    margin-left: 4px;
+  }
+  .sub-features {
+    list-style: none; margin: 0; padding: 18px 0 0;
+    border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sub-features li {
+    position: relative; padding-left: 22px;
+    font-size: 13px; color: var(--text-dim); line-height: 1.4;
+  }
+  .sub-features li::before {
+    content: "✓"; position: absolute; left: 0; top: 0;
+    color: var(--accent); font-size: 12px; font-family: var(--font-mono);
+  }
+  .sub-card.best-value {
+    border-color: var(--accent);
+    box-shadow: 0 0 48px var(--accent-glow);
+  }
+  .sub-card.best-value:hover { box-shadow: 0 0 64px rgba(125,255,176,0.24); }
+  .best-ribbon {
+    position: absolute; top: 0; right: 0;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #001207; background: var(--accent);
+    padding: 6px 14px 6px 18px;
+    border-bottom-left-radius: 10px;
+  }
+  @media (max-width: 960px) {
+    .free-features { grid-template-columns: 1fr; }
+    .token-grid, .sub-grid { grid-template-columns: 1fr; }
+    .pricing-free { padding: 28px 24px; }
+  }
+  @media (max-width: 480px) {
+    .pricing-free { padding: 22px 18px; border-radius: 14px; }
+    .free-name { font-size: 22px; }
+    .free-price { font-size: 28px; }
+    .free-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .free-token { text-align: left; }
+    .token-card, .sub-card { padding: 22px 18px; }
+    .pricing-sub-head { margin: 40px 0 18px; }
+  }
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -690,7 +864,6 @@
     font-family: var(--font-mono); font-size: 11px;
     color: var(--text-faint);
   }
-
   .supervisor {
     margin-top: 28px;
     border: 1px solid var(--line);
@@ -725,7 +898,6 @@
     color: var(--text-dim);
     text-align: right;
   }
-
   .contact {
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -777,7 +949,6 @@
     transition: transform .2s;
   }
   .contact-card:hover .arrow { transform: translate(3px, -3px); }
-
   footer {
     padding: 40px 0;
     border-top: 1px solid var(--line);
@@ -788,7 +959,6 @@
     display: flex; justify-content: space-between; align-items: center;
     gap: 24px; flex-wrap: wrap;
   }
-
   @media (max-width: 960px) {
     .nav-links { display: none; }
     .nav-status { font-size: 10px; padding: 5px 9px; }
@@ -818,7 +988,6 @@
     section { padding: 80px 0; }
     .wrap { padding: 0 20px; }
   }
-
   @media (max-width: 480px) {
     section { padding: 60px 0; }
     .wrap { padding: 0 16px; }
@@ -878,7 +1047,6 @@
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="wrap nav-inner">
     <div class="brand">
@@ -891,13 +1059,13 @@
       <a href="#about">Overview</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-status">RECOGNITION · LIVE</div>
   </div>
 </nav>
-
 <header class="hero">
   <div class="wrap">
     <div class="hero-grid">
@@ -938,14 +1106,12 @@
           </div>
         </div>
       </div>
-
       <div class="hand-stage" id="handStage">
         <div class="corner tl"></div>
         <div class="corner tr"></div>
         <div class="corner bl"></div>
         <div class="corner br"></div>
         <div class="scan"></div>
-
         <div class="hud tl">
           <span class="lbl">MEDIAPIPE</span>
           <span class="v" id="hudFps">62 fps</span>
@@ -962,12 +1128,10 @@
           <span class="lbl">DISTANCE</span>
           <span class="v" id="hudDist">42 cm</span>
         </div>
-
         <svg viewBox="0 0 400 400" id="handSvg">
           <g id="handBones"></g>
           <g id="handJoints"></g>
         </svg>
-
         <div class="gesture-badge">
           <span class="pill" id="gestureName">OPEN_PALM</span>
           <span class="arrow-rt">→</span>
@@ -975,13 +1139,11 @@
         </div>
       </div>
     </div>
-
     <div class="marquee">
       <div class="marquee-track" id="marqueeTrack"></div>
     </div>
   </div>
 </header>
-
 <section id="about">
   <div class="wrap">
     <div class="section-head">
@@ -993,7 +1155,6 @@
         Built from the ground up to make gesture-controlled gaming feel as immediate as a keyboard - without the cost or friction of dedicated hardware.
       </div>
     </div>
-
     <div class="about-grid">
       <div class="about-copy">
         <p>
@@ -1027,7 +1188,6 @@
     </div>
   </div>
 </section>
-
 <section id="features">
   <div class="wrap">
     <div class="section-head">
@@ -1039,7 +1199,6 @@
         Every feature exists to close the gap between intent and input - fast recognition, clear feedback, and the resilience to handle real-world lighting and posture.
       </div>
     </div>
-
     <div class="features">
       <div class="feat wide feat-webcam">
         <div class="num">F.01</div>
@@ -1054,35 +1213,30 @@
           <span>IMU armband</span>
         </div>
       </div>
-
       <div class="feat wide">
         <div class="num">F.02</div>
         <h3>Real-time gesture recognition</h3>
         <p>Detects, classifies and routes a gesture to the game in under one frame of typical 60 fps gameplay.</p>
         <div class="vis"><div class="vis-bars"><span></span><span style="animation-delay:.1s"></span><span style="animation-delay:.2s"></span><span style="animation-delay:.3s"></span><span style="animation-delay:.4s"></span><span style="animation-delay:.5s"></span><span style="animation-delay:.6s"></span><span style="animation-delay:.7s"></span><span style="animation-delay:.8s"></span><span style="animation-delay:.9s"></span><span style="animation-delay:1s"></span><span style="animation-delay:1.1s"></span></div></div>
       </div>
-
       <div class="feat">
         <div class="num">F.03</div>
         <h3>Cursor &amp; click mapping</h3>
         <p>Move the system cursor with your fingertip. Pinch to click.</p>
         <div class="vis"><div class="vis-cursor"><div class="crosshair"></div></div></div>
       </div>
-
       <div class="feat">
         <div class="num">F.04</div>
         <h3>Visual feedback overlay</h3>
         <p>On-screen skeleton, confidence score and active gesture, drawn over your camera feed.</p>
         <div class="vis"><div class="vis-dots"><span></span><span></span><span></span><span></span><span></span></div></div>
       </div>
-
       <div class="feat">
         <div class="num">F.05</div>
         <h3>Multi-hand detection</h3>
         <p>Track both hands at once for two-handed control schemes.</p>
         <div class="vis"><div class="vis-multi"><div class="h"></div><div class="h"></div></div></div>
       </div>
-
       <div class="feat">
         <div class="num">F.06</div>
         <h3>Distance &amp; lighting alerts</h3>
@@ -1091,14 +1245,12 @@
           <div class="vis-alert"><span class="icon">!</span> <span>Too close · move back 15 cm</span></div>
         </div>
       </div>
-
       <div class="feat">
         <div class="num">F.07</div>
         <h3>Calibration system</h3>
         <p>A guided one-minute flow that tunes thresholds to your camera, lighting and hand shape.</p>
         <div class="vis"><div class="vis-bars" style="--c: var(--blue)"><span style="background:var(--blue);animation-delay:0s"></span><span style="background:var(--blue);animation-delay:.2s"></span><span style="background:var(--blue);animation-delay:.4s"></span><span style="background:var(--blue);animation-delay:.6s"></span><span style="background:var(--blue);animation-delay:.8s"></span><span style="background:var(--blue);animation-delay:1s"></span><span style="background:var(--blue);animation-delay:1.2s"></span><span style="background:var(--blue);animation-delay:1.4s"></span></div></div>
       </div>
-
       <div class="feat wide">
         <div class="num">F.08</div>
         <h3>Four built-in game modes</h3>
@@ -1110,7 +1262,6 @@
           <span class="chip">Mouse</span>
         </div></div>
       </div>
-
       <div class="feat wide">
         <div class="num">F.09</div>
         <h3>Custom gesture training</h3>
@@ -1120,7 +1271,6 @@
     </div>
   </div>
 </section>
-
 <section id="how">
   <div class="wrap">
     <div class="section-head">
@@ -1132,7 +1282,6 @@
         The system is built in Python on top of OpenCV for capture, MediaPipe for landmark detection, PyTorch for classification, PyAutoGUI and pynput for input emulation, and PySide6 for the desktop interface.
       </div>
     </div>
-
     <div class="pipeline">
       <div class="pipe-track">
         <div class="pipe-step">
@@ -1144,7 +1293,6 @@
           <p>Frames pulled from the system webcam at 30-60 fps via OpenCV.</p>
           <span class="tag">OpenCV</span>
         </div>
-
         <div class="pipe-step">
           <div class="pn"><span class="n">02</span> · LANDMARKS</div>
           <div class="pi">
@@ -1154,7 +1302,6 @@
           <p>MediaPipe locates 21 keypoints per hand - joints, fingertips, wrist.</p>
           <span class="tag">MediaPipe</span>
         </div>
-
         <div class="pipe-step">
           <div class="pn"><span class="n">03</span> · CLASSIFY</div>
           <div class="pi">
@@ -1164,7 +1311,6 @@
           <p>A neural network trained on labeled gesture data picks the most likely class.</p>
           <span class="tag">PyTorch</span>
         </div>
-
         <div class="pipe-step">
           <div class="pn"><span class="n">04</span> · MAP</div>
           <div class="pi">
@@ -1174,7 +1320,6 @@
           <p>Each class is routed through a profile that maps it to a keystroke, click or mouse move.</p>
           <span class="tag">Profile engine</span>
         </div>
-
         <div class="pipe-step">
           <div class="pn"><span class="n">05</span> · DISPATCH</div>
           <div class="pi">
@@ -1185,7 +1330,6 @@
           <span class="tag">PyAutoGUI</span>
         </div>
       </div>
-
       <div class="pipe-arrows">
         <div class="pa first"></div>
         <div class="pa"></div>
@@ -1194,7 +1338,6 @@
         <div class="pa last"></div>
       </div>
     </div>
-
     <div class="code">
       <div class="code-head">
         <div style="display:flex;align-items:center;gap:14px">
@@ -1205,7 +1348,6 @@
       </div>
 <pre><span class="kw">import</span> <span class="var">torch</span>
 <span class="kw">import</span> <span class="var">torch.nn</span> <span class="kw">as</span> <span class="var">nn</span>
-
 <span class="kw">class</span> <span class="fn">GestureNet</span>(<span class="var">nn</span>.<span class="fn">Module</span>):
     <span class="com"># 21 landmarks × (x,y,z) + frame delta = 126 features</span>
     <span class="kw">def</span> <span class="fn">__init__</span>(<span class="var">self</span>, <span class="var">input_size</span>, <span class="var">num_classes</span>):
@@ -1216,11 +1358,9 @@
             <span class="var">nn</span>.<span class="fn">Linear</span>(<span class="num">128</span>, <span class="num">64</span>),         <span class="var">nn</span>.<span class="fn">BatchNorm1d</span>(<span class="num">64</span>),  <span class="var">nn</span>.<span class="fn">ReLU</span>(), <span class="var">nn</span>.<span class="fn">Dropout</span>(<span class="num">0.2</span>),
             <span class="var">nn</span>.<span class="fn">Linear</span>(<span class="num">64</span>, <span class="var">num_classes</span>)
         )
-
     <span class="kw">def</span> <span class="fn">forward</span>(<span class="var">self</span>, <span class="var">x</span>):
         <span class="com"># x: tensor of shape (batch, 126)</span>
         <span class="kw">return</span> <span class="var">self</span>.<span class="var">net</span>(<span class="var">x</span>)
-
 <span class="com"># inference loop, per webcam frame</span>
 <span class="var">features</span>, <span class="var">prev_row</span> = <span class="fn">extract_features</span>(<span class="var">landmarks</span>, <span class="var">prev_row</span>)
 <span class="var">logits</span> = <span class="var">model</span>(<span class="var">torch</span>.<span class="fn">tensor</span>([<span class="var">features</span>]))
@@ -1229,21 +1369,134 @@
     </div>
   </div>
 </section>
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">04 · Pricing</div>
+        <h2>Flexible access for casual players and power users.</h2>
+      </div>
+      <div class="head-aside">
+        Whether you're trying HandMouse for the first time or replacing your controller entirely, choose the plan that matches how you play.
+      </div>
+    </div>
 
+    <div class="pricing-free">
+      <div class="plan-badge" style="margin-bottom:18px">Best for trying HandMouse</div>
+      <div class="free-head">
+        <div>
+          <div class="free-name">Free Base Plan</div>
+          <div class="free-price">$0 <span>/ forever</span></div>
+        </div>
+        <div class="free-token">
+          <div class="k">Daily allowance</div>
+          <div class="v">1 token · 60 min of play</div>
+        </div>
+      </div>
+      <ul class="free-features">
+        <li>1 free token every day</li>
+        <li>60 minutes of free gameplay daily</li>
+        <li>Non-intrusive sidebar advertisements</li>
+        <li>Access to almost all core features</li>
+        <li>Includes calibration system</li>
+        <li>Includes multi-hand support</li>
+        <li>Includes all built-in game modes</li>
+        <li>Limited custom gestures*</li>
+        <li>Limited profile slots*</li>
+      </ul>
+      <div class="free-footnote">*Limits are placeholders and may change in future releases.</div>
+    </div>
+
+    <div class="pricing-sub-head">
+      <div class="pricing-sub-label">Token top-ups</div>
+      <p>1 token = 60 minutes of gameplay. Prices and bundle sizes below are placeholders.</p>
+    </div>
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="token-num">10</div>
+        <div class="token-label">Tokens</div>
+        <div class="token-price">$X.XX <span>one-time</span></div>
+        <div class="token-minutes">600 minutes total play time</div>
+      </div>
+      <div class="token-card popular">
+        <div class="plan-badge">Most Popular</div>
+        <div class="token-num">50</div>
+        <div class="token-label">Tokens</div>
+        <div class="token-price">$X.XX <span>one-time</span></div>
+        <div class="token-minutes">3000 minutes total play time</div>
+      </div>
+      <div class="token-card value">
+        <div class="plan-badge">Best Value</div>
+        <div class="token-num">100</div>
+        <div class="token-label">Tokens</div>
+        <div class="token-price">$X.XX <span>one-time</span></div>
+        <div class="token-minutes">6000 minutes total play time</div>
+      </div>
+    </div>
+
+    <div class="pricing-sub-head">
+      <div class="pricing-sub-label">Unlimited subscriptions</div>
+      <p>Unlimited tokens, unlimited gameplay time, zero ads. Prices below are placeholders.</p>
+    </div>
+    <div class="sub-grid">
+      <div class="sub-card">
+        <div class="plan-badge">Unlimited Access</div>
+        <div class="sub-name">Monthly</div>
+        <div class="sub-price">$X.XX <span>/ month</span></div>
+        <ul class="sub-features">
+          <li>Unlimited gameplay time</li>
+          <li>Unlimited tokens</li>
+          <li>No advertisements</li>
+          <li>Unlimited custom gestures</li>
+          <li>Unlimited profile creation</li>
+          <li>Priority chat support</li>
+          <li>Access to all future premium features</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <div class="plan-badge">Unlimited Access</div>
+        <div class="sub-name">Half-Yearly</div>
+        <div class="sub-price">$X.XX <span>/ 6 months</span></div>
+        <ul class="sub-features">
+          <li>Unlimited gameplay time</li>
+          <li>Unlimited tokens</li>
+          <li>No advertisements</li>
+          <li>Unlimited custom gestures</li>
+          <li>Unlimited profile creation</li>
+          <li>Priority chat support</li>
+          <li>Access to all future premium features</li>
+        </ul>
+      </div>
+      <div class="sub-card best-value">
+        <div class="best-ribbon">Best Value</div>
+        <div class="plan-badge">Unlimited Access</div>
+        <div class="sub-name">Yearly</div>
+        <div class="sub-price">$X.XX <span>/ year</span></div>
+        <ul class="sub-features">
+          <li>Unlimited gameplay time</li>
+          <li>Unlimited tokens</li>
+          <li>No advertisements</li>
+          <li>Unlimited custom gestures</li>
+          <li>Unlimited profile creation</li>
+          <li>Priority chat support</li>
+          <li>Access to all future premium features</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="team">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">04 · Team</div>
+        <div class="section-label">05 · Team</div>
         <h2>Six engineers. One supervisor. One bare-handed controller.</h2>
       </div>
       <div class="head-aside">
         FYP-26-S2-02 is a final year project at the University of Wollongong, delivered via the Singapore Institute of Management.
       </div>
     </div>
-
     <div class="team-grid" id="teamGrid"></div>
-
     <div class="supervisor">
       <div class="sup-left">
         <div class="avatar">AC</div>
@@ -1259,13 +1512,12 @@
     </div>
   </div>
 </section>
-
 <section id="contact">
   <div class="wrap">
     <div class="contact">
       <div class="contact-grid">
         <div>
-          <div class="section-label">05 · Get in touch</div>
+          <div class="section-label">06 · Get in touch</div>
           <h2>Curious, hiring, or want a demo?</h2>
           <p>The full system is being demonstrated as part of UOW × SIM's final year project showcase. Reach out for a live demo, the source repository, or the project poster.</p>
         </div>
@@ -1296,14 +1548,12 @@
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap foot">
     <div>FYP-26-S2-02 · Gaming with Bare Hands · © 2026</div>
     <div>University of Wollongong &nbsp;·&nbsp; Singapore Institute of Management</div>
   </div>
 </footer>
-
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const BONES = [
   [0,1],[0,5],[5,9],[9,13],[13,17],[0,17],
@@ -1314,7 +1564,6 @@ const BONES = [
   [17,18],[18,19],[19,20],
 ];
 const TIPS = [4, 8, 12, 16, 20];
-
 function makePoses() {
   const cx = 200, cy = 280;
   const palm = {
@@ -1325,7 +1574,6 @@ function makePoses() {
     13: [cx + 20, cy - 50],
     17: [cx + 50, cy - 40],
   };
-
   function chain(start, segs) {
     const pts = [];
     let [x, y] = start;
@@ -1335,7 +1583,6 @@ function makePoses() {
     }
     return pts;
   }
-
   function buildHand({ thumb, index, middle, ring, pinky }) {
     const P = {};
     P[0] = palm[0]; P[1] = palm[1]; P[5] = palm[5];
@@ -1352,7 +1599,6 @@ function makePoses() {
     P[18] = pp[0]; P[19] = pp[1]; P[20] = pp[2];
     return P;
   }
-
   const open = buildHand({
     thumb:  [[-20,-20],[-22,-22],[-22,-22]],
     index:  [[ -5,-40],[ -3,-38],[ -2,-32]],
@@ -1360,7 +1606,6 @@ function makePoses() {
     ring:   [[  5,-42],[  4,-40],[  3,-34]],
     pinky:  [[ 14,-34],[ 12,-32],[ 10,-26]],
   });
-
   const fist = buildHand({
     thumb:  [[-18,-10],[-12, 4],[ -4, 12]],
     index:  [[ -3,-28],[  4,-14],[ 10, -2]],
@@ -1368,7 +1613,6 @@ function makePoses() {
     ring:   [[  4,-28],[  9,-14],[ 14, -2]],
     pinky:  [[ 10,-22],[ 14, -8],[ 16,  4]],
   });
-
   const point = buildHand({
     thumb:  [[-18, -8],[-12,  4],[ -4, 12]],
     index:  [[ -5,-40],[ -3,-38],[ -2,-32]],
@@ -1376,7 +1620,6 @@ function makePoses() {
     ring:   [[  4,-28],[  9,-14],[ 14, -2]],
     pinky:  [[ 10,-22],[ 14, -8],[ 16,  4]],
   });
-
   const peace = buildHand({
     thumb:  [[-18, -8],[-12,  4],[ -4, 12]],
     index:  [[-10,-38],[ -8,-36],[ -6,-32]],
@@ -1384,7 +1627,6 @@ function makePoses() {
     ring:   [[  4,-28],[  9,-14],[ 14, -2]],
     pinky:  [[ 10,-22],[ 14, -8],[ 16,  4]],
   });
-
   const pinch = buildHand({
     thumb:  [[-14,-26],[ -4,-30],[  8,-32]],
     index:  [[ -3,-40],[  4,-36],[ 12,-30]],
@@ -1392,7 +1634,6 @@ function makePoses() {
     ring:   [[  5,-42],[  4,-40],[  3,-34]],
     pinky:  [[ 14,-34],[ 12,-32],[ 10,-26]],
   });
-
   return [
     { name: "JUMP",       cmd: "↑ ARROW",     pts: open,  fps: 62, conf: 0.97 },
     { name: "ROLL",       cmd: "↓ ARROW",     pts: fist,  fps: 61, conf: 0.94 },
@@ -1401,18 +1642,15 @@ function makePoses() {
     { name: "LEFT_CLICK", cmd: "LMB CLICK",   pts: pinch, fps: 60, conf: 0.93 },
   ];
 }
-
 const POSES = makePoses();
 const bonesGroup  = document.getElementById('handBones');
 const jointsGroup = document.getElementById('handJoints');
-
 const boneEls = BONES.map(([a,b]) => {
   const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
   l.setAttribute('class', 'hand-bone');
   bonesGroup.appendChild(l);
   return { a, b, el: l };
 });
-
 const jointEls = [];
 for (let i = 0; i < 21; i++) {
   const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -1423,15 +1661,12 @@ for (let i = 0; i < 21; i++) {
   jointsGroup.appendChild(c);
   jointEls.push(c);
 }
-
 let current = POSES[0].pts;
 let target  = POSES[0].pts;
 let t0      = performance.now();
 const lerpDur = 700;
-
 function lerp(a, b, t) { return a + (b - a) * t; }
 function ease(t) { return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2; }
-
 function renderFrame(now) {
   const t = Math.min(1, (now - t0) / lerpDur);
   const e = ease(t);
@@ -1457,13 +1692,11 @@ function renderFrame(now) {
   requestAnimationFrame(renderFrame);
 }
 requestAnimationFrame(renderFrame);
-
 const hudFps  = document.getElementById('hudFps');
 const hudConf = document.getElementById('hudConf');
 const hudDist = document.getElementById('hudDist');
 const gName   = document.getElementById('gestureName');
 const gCmd    = document.getElementById('gestureCmd');
-
 let pi = 0;
 function cyclePose() {
   pi = (pi + 1) % POSES.length;
@@ -1480,7 +1713,6 @@ function cyclePose() {
   hudDist.textContent = (38 + Math.floor(Math.random()*10)) + ' cm';
 }
 setInterval(cyclePose, 2200);
-
 const MAPPINGS = [
   ["Open palm",        "SPACE · Shield"],
   ["Fist / Roll",      "↓ Arrow · Duck"],
@@ -1496,7 +1728,6 @@ const MAPPINGS = [
 const track = document.getElementById('marqueeTrack');
 const makeItem = (g, k) => `<div class="marquee-item"><span class="g">${g}</span><span class="arr">→</span><span class="k">${k}</span></div>`;
 track.innerHTML = MAPPINGS.concat(MAPPINGS).map(([g,k]) => makeItem(g,k)).join('');
-
 const TEAM = [
   { name: "Muhammad Fathul Nuzayh",    role: "Hand tracking · MediaPipe pipeline" },
   { name: "Darren Fasius",             role: "PyTorch model · gesture classifier" },
@@ -1514,7 +1745,6 @@ document.getElementById('teamGrid').innerHTML = TEAM.map((m, i) => `
     <div class="role">${m.role}</div>
   </div>
 `).join('');
-
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const el = document.getElementById(a.getAttribute('href').slice(1));
