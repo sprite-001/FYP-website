@@ -823,6 +823,53 @@
     .token-card, .sub-card { padding: 22px 18px; }
     .pricing-sub-head { margin: 40px 0 18px; }
   }
+  /* ---------- Download ---------- */
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .download-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 34px 30px;
+    display: flex; flex-direction: column;
+    transition: border-color .25s, background .25s, transform .25s, box-shadow .25s;
+  }
+  .download-card:hover {
+    border-color: var(--line-strong); background: var(--surface-2);
+    transform: translateY(-3px);
+  }
+  .download-icon {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 12px;
+    background: rgba(125,255,176,0.06);
+    border: 1px solid rgba(125,255,176,0.3);
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  .download-name {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 22px; letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .download-desc {
+    font-size: 14px; color: var(--text-dim); line-height: 1.55;
+    margin-bottom: 26px; flex: 1;
+  }
+  .download-meta {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-faint); letter-spacing: 0.04em;
+    margin-top: 18px;
+  }
+  @media (max-width: 960px) {
+    .download-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .download-card { padding: 24px 20px; }
+  }
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1060,6 +1107,7 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#download">Download</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
     </div>
@@ -1409,54 +1457,40 @@
 
     <div class="pricing-sub-head">
       <div class="pricing-sub-label">Token top-ups</div>
-      <p>1 token = 60 minutes of gameplay. Prices and bundle sizes below are placeholders.</p>
+      <p>1 token = 60 minutes of gameplay.</p>
     </div>
     <div class="token-grid">
       <div class="token-card">
-        <div class="token-num">10</div>
+        <div class="token-num">50</div>
         <div class="token-label">Tokens</div>
-        <div class="token-price">$X.XX <span>one-time</span></div>
-        <div class="token-minutes">600 minutes total play time</div>
+        <div class="token-price">SGD 0.99 <span>one-time</span></div>
+        <div class="token-minutes">3000 minutes total play time</div>
       </div>
       <div class="token-card popular">
         <div class="plan-badge">Most Popular</div>
-        <div class="token-num">50</div>
+        <div class="token-num">150</div>
         <div class="token-label">Tokens</div>
-        <div class="token-price">$X.XX <span>one-time</span></div>
-        <div class="token-minutes">3000 minutes total play time</div>
+        <div class="token-price">SGD 2.49 <span>one-time</span></div>
+        <div class="token-minutes">9000 minutes total play time</div>
       </div>
       <div class="token-card value">
         <div class="plan-badge">Best Value</div>
-        <div class="token-num">100</div>
+        <div class="token-num">400</div>
         <div class="token-label">Tokens</div>
-        <div class="token-price">$X.XX <span>one-time</span></div>
-        <div class="token-minutes">6000 minutes total play time</div>
+        <div class="token-price">SGD 5.99 <span>one-time</span></div>
+        <div class="token-minutes">24000 minutes total play time</div>
       </div>
     </div>
 
     <div class="pricing-sub-head">
       <div class="pricing-sub-label">Unlimited subscriptions</div>
-      <p>Unlimited tokens, unlimited gameplay time, zero ads. Prices below are placeholders.</p>
+      <p>Unlimited tokens, unlimited gameplay time, zero ads.</p>
     </div>
     <div class="sub-grid">
       <div class="sub-card">
         <div class="plan-badge">Unlimited Access</div>
         <div class="sub-name">Monthly</div>
-        <div class="sub-price">$X.XX <span>/ month</span></div>
-        <ul class="sub-features">
-          <li>Unlimited gameplay time</li>
-          <li>Unlimited tokens</li>
-          <li>No advertisements</li>
-          <li>Unlimited custom gestures</li>
-          <li>Unlimited profile creation</li>
-          <li>Priority chat support</li>
-          <li>Access to all future premium features</li>
-        </ul>
-      </div>
-      <div class="sub-card">
-        <div class="plan-badge">Unlimited Access</div>
-        <div class="sub-name">Half-Yearly</div>
-        <div class="sub-price">$X.XX <span>/ 6 months</span></div>
+        <div class="sub-price">SGD 3.99 <span>/ month</span></div>
         <ul class="sub-features">
           <li>Unlimited gameplay time</li>
           <li>Unlimited tokens</li>
@@ -1471,7 +1505,7 @@
         <div class="best-ribbon">Best Value</div>
         <div class="plan-badge">Unlimited Access</div>
         <div class="sub-name">Yearly</div>
-        <div class="sub-price">$X.XX <span>/ year</span></div>
+        <div class="sub-price">SGD 29.99 <span>/ year</span></div>
         <ul class="sub-features">
           <li>Unlimited gameplay time</li>
           <li>Unlimited tokens</li>
@@ -1482,6 +1516,50 @@
           <li>Access to all future premium features</li>
         </ul>
       </div>
+      <div class="sub-card">
+        <div class="plan-badge">Custom</div>
+        <div class="sub-name">Custom</div>
+        <div class="sub-price">Contact us</div>
+        <ul class="sub-features">
+          <li>Tailored to your needs</li>
+          <li>Flexible terms and pricing</li>
+          <li>Priority chat support</li>
+          <li>Access to all future premium features</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">05 · Download</div>
+        <h2>Get HandMouse running on your desktop.</h2>
+      </div>
+      <div class="head-aside">
+        Native installers for macOS and Windows. Grab the build for your platform and you'll be tracking gestures in minutes.
+      </div>
+    </div>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-icon">
+          <svg width="20" height="20" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-65.7-90-65.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        </div>
+        <div class="download-name">macOS</div>
+        <div class="download-desc">Universal .dmg installer for macOS. Open it and drag HandMouse into Applications.</div>
+        <a href="https://github.com/sprite-001/FYP-website/releases/download/v1.0.0.mac/HandMouse.dmg" class="btn btn-primary">Download for Mac <span class="arrow">↓</span></a>
+        <div class="download-meta">v1.0.0 · HandMouse.dmg</div>
+      </div>
+      <div class="download-card">
+        <div class="download-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5L10.5 4.4V11.4H3V5.5ZM11.4 4.27L21 3V11.4H11.4V4.27ZM3 12.3H10.5V19.4L3 18.3V12.3ZM11.4 12.3H21V20.8L11.4 19.5V12.3Z"/></svg>
+        </div>
+        <div class="download-name">Windows</div>
+        <div class="download-desc">.exe installer for Windows 10/11. Run the setup wizard, then launch HandMouse from the Start menu.</div>
+        <a href="https://github.com/sprite-001/FYP-website/releases/download/v1.0.0.win/HandMouseSetup.exe" class="btn btn-primary">Download for Windows <span class="arrow">↓</span></a>
+        <div class="download-meta">v1.0.0 · HandMouseSetup.exe</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1489,7 +1567,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">05 · Team</div>
+        <div class="section-label">06 · Team</div>
         <h2>Six engineers. One supervisor. One bare-handed controller.</h2>
       </div>
       <div class="head-aside">
@@ -1517,7 +1595,7 @@
     <div class="contact">
       <div class="contact-grid">
         <div>
-          <div class="section-label">06 · Get in touch</div>
+          <div class="section-label">07 · Get in touch</div>
           <h2>Curious, hiring, or want a demo?</h2>
           <p>The full system is being demonstrated as part of UOW × SIM's final year project showcase. Reach out for a live demo, the source repository, or the project poster.</p>
         </div>
