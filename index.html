@@ -870,6 +870,41 @@
   @media (max-width: 480px) {
     .download-card { padding: 24px 20px; }
   }
+  /* ---------- Privacy ---------- */
+  .privacy-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 32px;
+  }
+  .privacy-list li {
+    position: relative;
+    padding-left: 28px;
+  }
+  .privacy-list li::before {
+    content: "✓"; position: absolute; left: 0; top: 1px;
+    color: var(--accent); font-size: 13px; font-family: var(--font-mono);
+  }
+  .privacy-title {
+    display: block;
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 15px; color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .privacy-desc {
+    display: block;
+    font-size: 13.5px; color: var(--text-dim); line-height: 1.55;
+  }
+  .privacy-footnote {
+    margin-top: 32px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-faint); line-height: 1.6;
+  }
+  @media (max-width: 960px) {
+    .privacy-list { grid-template-columns: 1fr; }
+  }
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1107,6 +1142,7 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#privacy">Privacy</a>
       <a href="#download">Download</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
@@ -1530,11 +1566,59 @@
     </div>
   </div>
 </section>
+<section id="privacy">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">05 · Privacy</div>
+        <h2>Your camera never leaves your device.</h2>
+      </div>
+      <div class="head-aside">
+        Please read this before downloading. HandMouse needs camera access to see your hand, here's exactly what happens with that data.
+      </div>
+    </div>
+    <ul class="privacy-list">
+      <li>
+        <span class="privacy-title">Camera access is required</span>
+        <span class="privacy-desc">Used to see your hand for gesture control. You must allow camera access for the app to function.</span>
+      </li>
+      <li>
+        <span class="privacy-title">No video is ever stored</span>
+        <span class="privacy-desc">Frames are processed in memory only and discarded immediately after analysis. Nothing is written to disk.</span>
+      </li>
+      <li>
+        <span class="privacy-title">Everything runs locally</span>
+        <span class="privacy-desc">Hand tracking and gesture recognition happen entirely on your device. Nothing from your camera is uploaded anywhere.</span>
+      </li>
+      <li>
+        <span class="privacy-title">Works fully offline</span>
+        <span class="privacy-desc">The core gesture pipeline needs no internet connection. No telemetry or webcam data ever leaves your computer.</span>
+      </li>
+      <li>
+        <span class="privacy-title">Custom gestures stay local</span>
+        <span class="privacy-desc">Trained gesture data (coordinates and labels, not video) is stored on your device only, and can be deleted anytime from Settings.</span>
+      </li>
+      <li>
+        <span class="privacy-title">HandBot assistant is opt-in</span>
+        <span class="privacy-desc">Runs fully offline, or through OpenAI's API with your own key. If you choose ChatGPT, only your typed questions are sent, never your camera feed.</span>
+      </li>
+      <li>
+        <span class="privacy-title">You stay in control</span>
+        <span class="privacy-desc">Enable or disable the chatbot, and reset or delete stored gesture data at any time.</span>
+      </li>
+      <li>
+        <span class="privacy-title">Aligned with PDPA & GDPR</span>
+        <span class="privacy-desc">Built around local processing, no unnecessary retention, and user-controlled deletion.</span>
+      </li>
+    </ul>
+    <div class="privacy-footnote">This is a student FYP prototype, provided as-is with no warranty of accuracy, uptime, or fitness for competitive use. By downloading, you accept these terms and consent to camera access on first launch.</div>
+  </div>
+</section>
 <section id="download">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">05 · Download</div>
+        <div class="section-label">06 · Download</div>
         <h2>Get HandMouse running on your desktop.</h2>
       </div>
       <div class="head-aside">
@@ -1567,7 +1651,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">06 · Team</div>
+        <div class="section-label">07 · Team</div>
         <h2>Six engineers. One supervisor. One bare-handed controller.</h2>
       </div>
       <div class="head-aside">
@@ -1595,7 +1679,7 @@
     <div class="contact">
       <div class="contact-grid">
         <div>
-          <div class="section-label">07 · Get in touch</div>
+          <div class="section-label">08 · Get in touch</div>
           <h2>Curious, hiring, or want a demo?</h2>
           <p>The full system is being demonstrated as part of UOW × SIM's final year project showcase. Reach out for a live demo, the source repository, or the project poster.</p>
         </div>
