@@ -454,6 +454,25 @@
     background: #fff;
     border-radius: 1px;
   }
+  .demo-mute {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    z-index: 2;
+    transition: background 0.2s ease;
+  }
+  .demo-mute:hover { background: rgba(10, 10, 10, 0.75); }
+  .demo-mute svg { width: 18px; height: 18px; display: block; }
+  .demo-mute .icon-vol-on { display: none; }
+  .demo-mute .icon-vol-off { display: block; }
+  .demo-video:not(.is-muted) .demo-mute .icon-vol-on { display: block; }
+  .demo-video:not(.is-muted) .demo-mute .icon-vol-off { display: none; }
   .features {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -1356,6 +1375,18 @@
         <span class="icon-play"></span>
         <span class="icon-pause"><span></span><span></span></span>
       </div>
+      <button type="button" class="demo-mute" id="demoMute" aria-label="Unmute video">
+        <svg class="icon-vol-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+        <svg class="icon-vol-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <path d="M18.36 5.64a9 9 0 0 1 0 12.73"></path>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
@@ -2005,13 +2036,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 const demoWrap = document.getElementById('demoVideoWrap');
 const demoVideo = document.getElementById('demoVideo');
-if (demoWrap && demoVideo) {
+const demoMute = document.getElementById('demoMute');
+if (demoWrap && demoVideo && demoMute) {
+  const syncMuteUI = () => {
+    demoWrap.classList.toggle('is-muted', demoVideo.muted);
+    demoMute.setAttribute('aria-label', demoVideo.muted ? 'Unmute video' : 'Mute video');
+  };
   demoWrap.addEventListener('click', () => {
     if (demoVideo.paused) demoVideo.play();
     else demoVideo.pause();
   });
+  demoMute.addEventListener('click', (e) => {
+    e.stopPropagation();
+    demoVideo.muted = !demoVideo.muted;
+    syncMuteUI();
+  });
   demoVideo.addEventListener('pause', () => demoWrap.classList.add('is-paused'));
   demoVideo.addEventListener('play', () => demoWrap.classList.remove('is-paused'));
+  syncMuteUI();
 }
 </script>
 </body>
