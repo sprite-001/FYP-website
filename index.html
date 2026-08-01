@@ -391,6 +391,69 @@
   .about-stat .l {
     font-size: 13px; color: var(--text-dim); line-height: 1.4;
   }
+  .demo-video {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    cursor: pointer;
+    line-height: 0;
+  }
+  .demo-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 640px;
+    object-fit: cover;
+    outline: none;
+  }
+  .demo-video::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%);
+    pointer-events: none;
+  }
+  .demo-video .demo-toggle {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 64px; height: 64px;
+    transform: translate(-50%, -50%) scale(0.9);
+    border-radius: 50%;
+    background: rgba(10, 10, 10, 0.45);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+  .demo-video:hover .demo-toggle,
+  .demo-video.is-paused .demo-toggle {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .demo-video .demo-toggle .icon-play,
+  .demo-video .demo-toggle .icon-pause {
+    display: none;
+  }
+  .demo-video.is-paused .demo-toggle .icon-play { display: block; }
+  .demo-video:not(.is-paused) .demo-toggle .icon-pause { display: block; }
+  .demo-toggle .icon-play {
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 15px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 3px;
+  }
+  .demo-toggle .icon-pause {
+    display: flex; gap: 5px;
+  }
+  .demo-toggle .icon-pause span {
+    width: 4px; height: 18px;
+    background: #fff;
+    border-radius: 1px;
+  }
   .features {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -1139,6 +1202,7 @@
     </div>
     <div class="nav-links">
       <a href="#about">Overview</a>
+      <a href="#demo">Demo</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
@@ -1272,11 +1336,34 @@
     </div>
   </div>
 </section>
+<section id="demo">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">02 · Demo</div>
+        <h2>Watch HandMouse in action.</h2>
+      </div>
+      <div class="head-aside">
+        A quick look at real-time gesture tracking driving actual gameplay - no controller, no wearable, just a webcam.
+      </div>
+    </div>
+    <div class="demo-video" id="demoVideoWrap">
+      <video id="demoVideo" autoplay muted loop playsinline preload="auto">
+        <source src="assets/video/marketing.mp4" type="video/mp4" />
+        Your browser doesn't support embedded video. <a href="assets/video/marketing.mp4">Download the video</a> instead.
+      </video>
+      <div class="demo-toggle">
+        <span class="icon-play"></span>
+        <span class="icon-pause"><span></span><span></span></span>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="features">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">02 · Capabilities</div>
+        <div class="section-label">03 · Capabilities</div>
         <h2>Nine pieces that make it feel like a real controller.</h2>
       </div>
       <div class="head-aside">
@@ -1359,7 +1446,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">03 · Pipeline</div>
+        <div class="section-label">04 · Pipeline</div>
         <h2>From a frame of video to a keystroke - in five stages.</h2>
       </div>
       <div class="head-aside">
@@ -1457,7 +1544,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">04 · Pricing</div>
+        <div class="section-label">05 · Pricing</div>
         <h2>Flexible access for casual players and power users.</h2>
       </div>
       <div class="head-aside">
@@ -1570,7 +1657,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">05 · Privacy</div>
+        <div class="section-label">06 · Privacy</div>
         <h2>Your camera never leaves your device.</h2>
       </div>
       <div class="head-aside">
@@ -1618,7 +1705,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">06 · Download</div>
+        <div class="section-label">07 · Download</div>
         <h2>Get HandMouse running on your desktop.</h2>
       </div>
       <div class="head-aside">
@@ -1651,7 +1738,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="section-label">07 · Team</div>
+        <div class="section-label">08 · Team</div>
         <h2>Six engineers. One supervisor. One bare-handed controller.</h2>
       </div>
       <div class="head-aside">
@@ -1679,7 +1766,7 @@
     <div class="contact">
       <div class="contact-grid">
         <div>
-          <div class="section-label">08 · Get in touch</div>
+          <div class="section-label">09 · Get in touch</div>
           <h2>Curious, hiring, or want a demo?</h2>
           <p>The full system is being demonstrated as part of UOW × SIM's final year project showcase. Reach out for a live demo, the source repository, or the project poster.</p>
         </div>
@@ -1916,6 +2003,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+const demoWrap = document.getElementById('demoVideoWrap');
+const demoVideo = document.getElementById('demoVideo');
+if (demoWrap && demoVideo) {
+  demoWrap.addEventListener('click', () => {
+    if (demoVideo.paused) demoVideo.play();
+    else demoVideo.pause();
+  });
+  demoVideo.addEventListener('pause', () => demoWrap.classList.add('is-paused'));
+  demoVideo.addEventListener('play', () => demoWrap.classList.remove('is-paused'));
+}
 </script>
 </body>
 </html>
