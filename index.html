@@ -2104,7 +2104,7 @@ if (demoWrap && demoVideo && demoMute) {
   syncMuteUI();
 }
 
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('downloadModal');
   const yesBtn = document.getElementById('downloadModalYes');
   const noBtn = document.getElementById('downloadModalNo');
@@ -2138,7 +2138,7 @@ if (demoWrap && demoVideo && demoMute) {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
-})();
+});
 </script>
 <div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle">
   <div class="modal-box">
