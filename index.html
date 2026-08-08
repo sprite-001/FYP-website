@@ -987,6 +987,54 @@
   @media (max-width: 960px) {
     .privacy-list { grid-template-columns: 1fr; }
   }
+  /* ---------- Download consent modal ---------- */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(4,6,10,0.72);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    z-index: 300;
+    opacity: 0; visibility: hidden;
+    transition: opacity .25s ease, visibility 0s linear .25s;
+  }
+  .modal-overlay.is-open {
+    opacity: 1; visibility: visible;
+    transition: opacity .25s ease, visibility 0s;
+  }
+  .modal-box {
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    max-width: 440px; width: 100%;
+    padding: 32px 30px;
+    transform: translateY(10px) scale(.98);
+    transition: transform .25s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .modal-overlay.is-open .modal-box { transform: translateY(0) scale(1); }
+  .modal-title {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 20px; color: var(--text); letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .modal-text {
+    font-size: 14px; color: var(--text-dim); line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .modal-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .modal-actions { display: flex; gap: 12px; margin-bottom: 24px; }
+  .modal-actions .btn { flex: 1; justify-content: center; }
+  .modal-note {
+    padding-top: 20px; border-top: 1px solid var(--line);
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-faint); line-height: 1.6;
+  }
+  .modal-note strong { color: var(--text-dim); font-weight: 500; }
+  @media (max-width: 480px) {
+    .modal-box { padding: 26px 22px; }
+    .modal-actions { flex-direction: column; }
+  }
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2055,6 +2103,53 @@ if (demoWrap && demoVideo && demoMute) {
   demoVideo.addEventListener('play', () => demoWrap.classList.remove('is-paused'));
   syncMuteUI();
 }
+
+(function () {
+  const modal = document.getElementById('downloadModal');
+  const yesBtn = document.getElementById('downloadModalYes');
+  const noBtn = document.getElementById('downloadModalNo');
+  const downloadLinks = document.querySelectorAll('#download .download-card .btn-primary');
+  let pendingHref = null;
+
+  function openModal(href) {
+    pendingHref = href;
+    modal.classList.add('is-open');
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    pendingHref = null;
+  }
+
+  downloadLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(link.getAttribute('href'));
+    });
+  });
+
+  yesBtn.addEventListener('click', () => {
+    if (pendingHref) window.location.href = pendingHref;
+    closeModal();
+  });
+  noBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+})();
 </script>
+<div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle">
+  <div class="modal-box">
+    <div class="modal-title" id="downloadModalTitle">Before you download</div>
+    <div class="modal-text">Have you read our <a href="#privacy">Privacy</a> section and do you agree to it? HandMouse needs camera access on first launch, and this confirms you understand what happens with that data.</div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" id="downloadModalNo">No</button>
+      <button type="button" class="btn btn-primary" id="downloadModalYes">Yes, I agree</button>
+    </div>
+    <div class="modal-note"><strong>Heads up on macOS:</strong> HandMouse isn't signed with an Apple Developer certificate, so Gatekeeper will block it on first open. Right-click (Control-click) the app in Applications, choose "Open", then confirm "Open" again — or go to System Settings → Privacy &amp; Security and click "Open Anyway".</div>
+  </div>
+</div>
 </body>
 </html>
